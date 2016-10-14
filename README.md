@@ -1,10 +1,10 @@
 # Wire.js
 #### Description
 
-Descripcion, usos....
+A small library for checking listen events.
 
 ### Examples
- - Flocking: http://46.101.187.32/wirejs/
+ http://46.101.187.32/wirejs/
 
 ### Installation
 ```sh
