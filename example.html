@@ -11,27 +11,35 @@
 	</body>
 
 	<script type="text/javascript">
-		var button1 = document.getElementById('button1');
-		var button2 = document.getElementById('button2');
-		var button3 = document.getElementById('button3');
+            var button1 = document.getElementById('button1');
+            var button2 = document.getElementById('button2');
+            var button3 = document.getElementById('button3');
 
-		button1.addEventListener('click', function (e) { 
-			document.dispatchEvent(new Event('event1'));
-		}, false);
+            var evt1 = document.createEvent("HTMLEvents");
+            evt1.initEvent("event1", false, true);
+            
+            var evt2 = document.createEvent("HTMLEvents");
+            evt2.initEvent("event2", false, true);
 
-		button2.addEventListener('click', function (e) { 
-			document.dispatchEvent(new Event('event2'));
-		}, false);
+            var evt3 = document.createEvent("HTMLEvents");
+            evt3.initEvent("event3", false, true);
 
-		button3.addEventListener('click', function (e) { 
-			document.dispatchEvent(new Event('event3'));
-		}, false);
 
-		function helloWorld() {
-			alert('Hello World!')
-		}
-		
-		var wire = new Wire(["event1", "event2", "event3"], helloWorld);
+            button1.addEventListener('click', function (e) { 
+                document.dispatchEvent(evt1, false, false);
+            }, false);
+            
+            button2.addEventListener('click', function (e) { 
+                document.dispatchEvent(evt2,false, false);
+            }, false);
+
+            button3.addEventListener('click', function (e) { 
+                document.dispatchEvent(evt3,false, false);
+            }, false);
+
+            function helloWorld() {
+                alert('Hello World!')
+            }
 	</script>
 </html>
 
